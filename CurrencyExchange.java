@@ -1,11 +1,5 @@
 
-//Name: Lam-Pui Chan
-//UFID: lamschan996
-//Section: 5993
-//Instructor: Kyla McMullen
-//Date: October 27th, 2016
-//Project 3
-//Currency Exchange
+//October 2016
 
 import java.util.Scanner;
 
@@ -34,14 +28,7 @@ public class CurrencyExchange {
 		} else
 			return false;
 	}
-
-	/****************************************************************
-	 * Do not modify anything above this line *
-	 *****************************************************************/
-
-	/**
-	 * main method, put your business logic and console input here
-	 */
+	
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 
@@ -136,18 +123,7 @@ public class CurrencyExchange {
 		}
 
 	}
-
-	/**
-	 * deposit the amount of a specific currency to the account
-	 *
-	 * @param amount
-	 *            the amount to be deposited.
-	 * @param currencyType
-	 *            the currency type will be the same as the type number used in
-	 *            the convertCurrency(double, int, boolean) method. An Invalid
-	 *            type will result in a deposit failure.
-	 * @return if deposit succeed, will return true. If failed, return false
-	 */
+	
 	public static boolean deposit(double amount, int currencyType) {
 
 		boolean result = true;
@@ -182,20 +158,6 @@ public class CurrencyExchange {
 		return result;
 	}
 
-	/**
-	 * withdraw the value amount with a specific currency from the account. The
-	 * withdraw amount should never exceed the current account balance, or the
-	 * withdrawal will fail. If the currency is other than USD, a 0.5%
-	 * convenience fee will be charged
-	 *
-	 * @param amount
-	 *            the amount to be withdrawn.
-	 * @param currencyType
-	 *            the currency type will be the same as the type number used in
-	 *            the convertCurrency(double, int, boolean) method. An invalid
-	 *            type will result a withdraw failure.
-	 * @return if withdraw succeed, will return true. If failed, return false
-	 */
 	public static boolean withdraw(double amount, int currencyType) {
 
 		boolean result = true;
@@ -249,25 +211,6 @@ public class CurrencyExchange {
 
 	}
 
-	/**
-	 * Convert the value amount between U.S. dollars and a specific currency.
-	 *
-	 * @param amount
-	 *            The amount of the currency to be converted.
-	 * @param currencyType
-	 *            The integer currencyType works as follows: 1 for usd (U.S.
-	 *            Dollars) 2 for eur (Euros) 3 for bri (British Pounds) 4 for
-	 *            inr (Indian Rupees) 5 for aus (Australian Dollars) 6 for cnd
-	 *            (Canadian Dollars) 7 for sid (Singapore Dollars) 8 for swf
-	 *            (Swiss Francs) 9 for mar (Malaysian Ringgits) 10 for jpy
-	 *            (Japanese Yen) 11 for cyr (Chinese Yuan Renminbi)
-	 * @param isConvertToUSD
-	 *            Tells the direction of the conversion. If the value is true,
-	 *            then the conversion is from a foreign currency to USD. If the
-	 *            value is false, then the conversion is from USD to the foreign
-	 *            currency
-	 * @return the converted amount
-	 */
 	public static double convertCurrency(double amount, int currencyType, boolean isConvertToUSD) {
 
 		double rate = 0;
@@ -322,26 +265,6 @@ public class CurrencyExchange {
 		return newAmt;
 	}
 
-	/**
-	 * Displays message at the end of the withdraw, deposit, and endTransaction
-	 * stating how much the user just withdrew/deposited and what type (this
-	 * will be used in both features B, C and D of the main menu).
-	 *
-	 * @param amount
-	 *            the amount of currency withdrew/deposited
-	 * @param currencyType
-	 *            the currency type will be the same as the type number used in
-	 *            {@link #convertCurrency(double, int, boolean)}
-	 * @param isDeposit
-	 *            if true log the deposit transaction, false log the withdraw
-	 *            transaction
-	 * @return Return the formatted log message as following examples: You
-	 *         successfully withdrew 10.0 U.S. Dollars You successfully
-	 *         deposited 30.0 Japanese Yen
-	 *         <p>
-	 *         The invalid input like invalid currencyType or negative amount,
-	 *         will return a “Logging Error”
-	 */
 	private static String logTransaction(double amount, int currencyType, boolean isDeposit) {
 
 		// Prints out appropriate string according to currency type
@@ -399,19 +322,6 @@ public class CurrencyExchange {
 		return result;
 	}
 
-	/**
-	 * Prints the currency menu (see output examples), allows the user to make a
-	 * selection from available currencies
-	 *
-	 * @param input
-	 *            the Scanner object you created at the beginning of the main
-	 *            method. Any value other than the 11 valid valid currency types
-	 *            should generate an invalid value prompt. Print the list again
-	 *            and prompt user to select a valid value from the list. the
-	 *            currency type will be the same as the type number used in
-	 *            {@link #convertCurrency(double, int, boolean)}
-	 * @return an integer from 1-11 inclusive representing the user’s selection.
-	 */
 	private static int currencyMenuOptionSelector(Scanner input) {
 		System.out.println("Please select the currency type: ");
 		System.out.println("1 - U.S. Dollar - 1.00\n" + "2 - Euro - 0.89\n" + "3 - British Pound - 0.78\n"
@@ -434,17 +344,7 @@ public class CurrencyExchange {
 
 	}
 
-	/**
-	 * Prints the main menu (see output examples), allows the user to make a
-	 * selection from available operations
-	 *
-	 * @param input
-	 *            the Scanner object you created at the beginning of the main
-	 *            method. Any value other than the 4 valid selections should
-	 *            generate an invalid value prompt. Print the list again and
-	 *            prompt user to select a valid value from the list.
-	 * @return an integer from 1-4 inclusive representing the user’s selection.
-	 */
+
 	private static int mainMenuOptionSelector(Scanner input) {
 		System.out.println("Please select an option from the list below:");
 		System.out.println("1.) Check the balance of your account");
@@ -467,10 +367,7 @@ public class CurrencyExchange {
 		return menuInput;
 	}
 
-	/**
-	 * Prints the conversion table at the start of the program (see the output
-	 * examples).
-	 */
+
 	private static void printConversionTable() {
 		System.out.println("Current rates are as follows: \n");
 		System.out.println("1 - U.S. Dollar - 1.00\n" + "2 - Euro - 0.89\n" + "3 - British Pound - 0.78\n"
